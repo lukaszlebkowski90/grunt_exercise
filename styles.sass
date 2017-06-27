@@ -1,0 +1,687 @@
+$block: block
+$inline-block: inline-block
+$none: none
+$inline: inline
+$margin: 0 auto
+$t-align: center
+$fonts: 'Open Sans', sans-serif
+$text-color: #FFF 
+$color-default: #000
+$hover-number: #02c7e5
+$background-color: #313234
+
+@mixin square-size ($width,$height)
+  width: $width
+  height: $height
+  
+@mixin padding-font-size( $padding,$size) 
+  padding: $padding
+  font-size: $size
+@mixin clearfix-properties
+  content: "" 
+  display: table
+  clear: both
+
+* 
+  box-sizing: border-box
+  font-size: 62.5%
+  
+body 
+  margin: 0
+  font-family: $fonts
+
+.row
+  &:before
+    @include clearfix-properties
+  &:after
+    @include clearfix-properties
+  
+  /*          Header       */
+.container 
+  max-width: 1200px
+  margin: $margin
+
+header
+  height: 5rem
+  background-color: rgba($color-default, 0.5)
+  nav 
+    ul
+      float: right
+      margin: 0
+      padding: 0
+      list-style-type: none
+      li
+        display: $inline-block
+        a
+          line-height: 5rem
+          display: $block
+          color: $text-color
+          text-decoration: none
+          text-transform: uppercase
+          font-weight: bold
+          @include padding-font-size(0 2rem, 1.6rem)
+          &:hover
+            color: $hover-number
+    img 
+      padding: 1rem   
+
+  /*           hero               */
+.hero 
+  background-image: url(http://www.serviceplan.com/files/serviceplan.com/06_Press/Press-Releases/2014/14-10-09_employerbranding2014/employerbranding_teaser.jpg)
+  @include square-size(100%,50rem)
+  background-size: cover
+  background-position: center
+  position: relative
+
+strong 
+  font-size: 3.2rem
+
+.slogan 
+  background-color: rgba($color-default,0.6)
+  float: right
+  @include padding-font-size(5%, 3rem)
+  color: $text-color
+  margin-top: 12%
+  text-transform: uppercase
+  position: absolute
+  right: 0px
+
+
+.col-1 
+  width: 8.33%
+.col-2
+  width: 16.66%
+.col-3
+  width: 25%
+.col-4
+  width: 33.33%
+.col-5
+  width: 41.66%
+.col-6  
+  width: 50%
+.col-7 
+  width: 58.33%
+.col-8
+  width: 66.66%
+.col-9
+  width: 75%
+.col-10
+  width: 83.33%
+.col-11
+  width: 91.66%
+.col-12
+  width: 100%
+
+.col-offset-0 
+  margin-left: 0
+.col-offset-1
+  margin-left: 8.33%
+.col-offset-2
+  margin-left: 16.66%
+.col-offset-3
+  margin-left: 25%
+.col-offset-4
+  margin-left: 33.33%
+.col-offset-5
+  margin-left: 41.66%
+.col-offset-6
+  margin-left: 50%
+.col-offset-7
+  margin-left: 58.33%
+.col-offset-8
+  margin-left: 66.66%
+.col-offset-9
+  margin-left: 75%
+.col-offset-10
+  margin-left: 83.33%
+.col-offset-11
+  margin-left: 91.66%
+
+[class^="col-"] 
+  float: left
+
+.circle 
+  position: absolute
+  bottom: 10%
+  left: 35%
+
+
+.circle-white
+  background-color: rgba($text-color,0.8)
+  border-radius: 50%
+  @include square-size(3rem,3rem)
+  transition: 0.4s ease-in-out
+  display: $inline-block
+  &:after
+    @extend .circle-white
+  &:before
+    @extend .circle-white
+
+.circle-white 
+  position: relative
+  margin-left: 3rem
+  &:hover
+    background-color: $text-color
+
+
+  /*     Elem-3       */
+.elem-3 
+  float: left
+  max-width: 100%
+  text-align: $t-align
+
+.fa-elem 
+  padding: 15%
+  background-color: $background-color
+  color: $text-color
+  border-radius: 40%
+  transition: 0.5s ease-in-out
+
+
+section
+  >.container
+    margin: 5% auto
+
+i.fa.fa-search, i.fa.fa-laptop, i.fa.fa-cogs 
+  font-size: 4.8rem
+
+.elem-3
+  h1 
+    text-transform: uppercase
+    transition: 0.5s ease-in-out
+    font-size: 1.8rem
+    margin: 10%
+  p 
+    text-align: $t-align
+    line-height: 2.5rem
+    @include padding-font-size(0 5%, 1.8rem)
+  &:hover
+    >h1 
+      color: $hover-number
+  &:hover
+    >i
+      background-color: $hover-number
+    
+.header 
+  text-align: $t-align
+  margin: auto
+  text-transform: uppercase
+  font-size: 4.8rem
+  font-weight: bold
+
+.paragraph 
+  margin: 5% auto
+  @include padding-font-size(0 5%, 1.8rem)
+  line-height: 3.2rem
+
+  /*        picture         */
+.gallery 
+  @include square-size(100%,auto)
+  max-width: none
+  img
+    @include square-size(100%,100%)
+
+.gallery-row
+  div 
+    position: relative
+    height: 20rem
+
+.icon-img
+  @extend .gallery 
+  background-color: rgba($text-color, 0.5)
+  position: absolute
+  display: $none
+
+.fa-search-plus:before, .fa-chain:before, .fa-link:before 
+  @include padding-font-size(0.5rem, 1.2rem)
+  background-color: $text-color
+  border-radius: 0.5rem
+  position: absolute
+  content: ""
+  top: 45%
+ 
+.fa-search-plus:before
+  right: 70%
+ 
+.fa-chain:before 
+  left: 30%
+
+.fa-link:before 
+  left: 59%
+  
+.gallery-row
+  > div 
+    > .fa 
+      @include square-size(100%,100%)
+      background-color: rgba($text-color, 0.5)
+      display: $none
+      position: absolute
+  
+.col-2:hover 
+  .fa 
+    display: $inline-block
+  
+.col-4:hover
+  .fa
+    @extend  .fa
+    
+
+  /*            chess            */
+.bg-chess 
+  background-image: url(http://c.wrzuta.pl/wi12258/60eba076000694264928238f)
+  border-radius: 50%
+  @include square-size(20rem,20rem)
+  background-position: center
+  margin: auto
+  position: relative
+  >h1 
+    font-size: 2rem
+    opacity: 0
+    border-radius: 50%
+    @include square-size(20rem,20rem)
+    position: absolute
+    margin: auto
+    text-align: $t-align
+    line-height: 20rem
+    transition: 0.4s all ease-in-out
+
+.bg-chess:hover
+  >h1 
+    opacity: 1
+    color: $text-color
+    background-color: rgba($color-default,.5)
+
+.people 
+  margin-top: 5%
+
+.people-name 
+  text-align: $t-align
+  margin-top: 20%
+  font-weight: bold
+  font-size: 2rem
+
+  /*          promo          */
+.promo 
+  margin: 0 auto
+  img 
+    @include square-size(30rem,30rem)
+    display: $block
+    margin-top: 23%
+    margin-left: 10%
+
+.promo-text-header
+  >div 
+    margin-top: 10%
+    text-transform: uppercase
+    @include padding-font-size(0 0 5% 0, 3rem)
+    padding-bottom: 5%
+    font-size: 3rem
+    font-weight: bold
+
+.promo-text-description
+  >div
+    @include padding-font-size(0 4% 0 0, 2.4rem)
+
+.num 
+  font-family: 'Ubuntu', sans-serif
+
+.numbers 
+  font-size: 6rem
+  font-weight: bold
+  margin-top: 20%
+  text-align: $t-align
+
+.numbers-text 
+  color: $hover-number
+  text-align: $t-align
+  text-transform: uppercase
+  font-size: 1.8rem
+  font-weight: bold
+  letter-spacing: 0.8rem
+  margin-bottom: 10%
+
+
+.icon-6 
+  padding: 1%
+  >i
+    background-color: $hover-number
+    font-size: 1.6rem
+    padding: 3%
+    margin: 0 1.5%
+    border-radius: 20%
+    color: $text-color
+
+.footer 
+  background-color: $background-color
+  color: $text-color
+  width: 100%
+  margin: $margin
+  padding: 0 5%
+  
+hr 
+  display: $inline-block
+  margin-left: 10%
+  width: 20%
+
+.footer
+  >.row
+    >.col-4 
+      padding: 0 2%
+
+h3
+  font-size: 1.6rem
+
+h2,.footer p, .col-8 p 
+  @extend h3
+
+footer 
+  text-align: $t-align
+  background-color: #202123
+  color: $text-color
+  @include padding-font-size(1% 0, 3rem)
+
+$information-tablet: "only screen and (min-width: 768px) and (max-width: 1199px)"
+@media #{$information-tablet} 
+  
+  .col-m-1 
+    width: 8.33%
+  .col-m-2
+    width: 16.66%
+  .col-m-3
+    width: 25%
+  .col-m-4
+    width: 33.33%
+  .col-m-5
+    width: 41.66%
+  .col-m-6
+    width: 50%
+  .col-m-7
+    width: 58.33%
+  .col-m-8
+    width: 66.66%
+  .col-m-9
+    width: 75%
+  .col-m-10
+    width: 83.33%
+  .col-m-11
+    width: 91.66%
+  .col-m-12
+    width: 100%
+    
+    /*          Header       */
+  header 
+    height: 10rem
+    img 
+      padding: 1rem
+      margin: $margin
+      display: $block
+      
+  header 
+    >nav
+      ul 
+        float: none
+        text-align: $t-align
+        list-type-style: none
+        >li:nth-child(n+2) 
+          margin-left: 3.3%
+          >a
+            line-height: 4rem
+            display: $block
+            font-size: 1.4rem
+    /*           hero               */ 
+    
+  strong, .slogan
+    font-size: 2.5rem
+  
+  .circle 
+    display: $none
+  
+    /*     Elem-3       */
+  
+  i.fa.fa-search, i.fa.fa-laptop, i.fa.fa-cogs
+    font-size: 3.8rem
+  
+  .elem-3
+    h1 
+      font-size: 1.8rem
+    p
+      line-height: 2.5rem
+      font-size: 1.5rem
+      margin-bottom: 10%
+      
+  .header
+    font-size: 2.5rem
+  
+  .paragraph 
+    font-size: 1.4rem
+    line-height: 3rem
+    text-align: $t-align
+  
+    /*        picture         */ 
+    
+  .img-m 
+    img
+      display: $block
+      margin: $margin
+      width: 50%
+    
+    /*            chess            */
+  .bg-chess 
+    margin-top: 10%
+    position: static
+    >h1 
+      font-size: 3rem
+      opacity: 1
+      background-color: rgba($color-default,0.4)
+      position: static
+  
+  .people 
+    margin-top: 0%
+
+  .people-name 
+    text-align: $t-align
+    margin-top: 10%
+    font-weight: bold
+    font-size: 3rem
+  
+    /*          promo          */
+  .promo-img
+    img 
+      margin: $margin
+      @include square-size(50%,auto)
+  
+  .promo 
+    margin: $margin
+  
+  .promo-text-header
+    >div 
+      margin-top: 1%
+      font-size: 3rem
+      font-weight: bold
+      text-align: $t-align
+  
+  
+  .promo-text-description
+    >div
+      @include padding-font-size(0.8rem, 2.4rem)
+      text-align: $t-align
+      line-height: 3rem
+  
+  .numbers 
+    margin-top: 2%
+    font-size: 5.4rem
+    
+  .numbers-text 
+    font-size: 2.4rem
+    letter-spacing: 0.2rem
+    margin-bottom: 5%
+  
+  .icon-6 
+    padding-bottom: 10%
+    >i 
+      margin: 2% 6%
+      @include padding-font-size(5%, 2rem)
+ 
+  hr 
+    width: 40%
+  
+  h4
+    font-size: 2rem
+    
+$information-phone: "only screen and (max-width : 767px)"
+@media #{$information-phone} 
+  
+  .col-s-1 
+    width: 8.33%
+  .col-s-2
+    width: 16.66%
+  .col-s-3
+    width: 25%
+  .col-s-4
+    width: 33.33%
+  .col-s-5
+    width: 41.66%
+  .col-s-6
+    width: 50%
+  .col-s-7
+    width: 58.33%
+  .col-s-8
+    width: 66.66%
+  .col-s-9
+    width: 75%
+  .col-s-10
+    width: 83.33%
+  .col-s-11
+    width: 91.66%
+  .col-s-12
+    width: 100%
+  
+    /*          Header       */
+  header
+    height: 30rem
+    img 
+      padding: 1rem
+      margin: $margin
+      display: $block
+    >nav
+      ul 
+        padding: 0
+        float: none
+        >li 
+          display: $block
+          >a
+            line-height: 4rem
+            display: $block
+            font-size: 1.6rem
+            text-align: $t-align
+            &:hover
+              color: $hover-number
+  
+    /*           hero              */ 
+  strong, .slogan 
+    font-size: 3rem
+  
+  .slogan 
+    margin-top: 0rem
+  
+  .circle 
+    display: $none
+  
+    /*     Elem-3       */
+  
+  i.fa.fa-search, i.fa.fa-laptop, i.fa.fa-cogs
+    font-size: 6.8rem
+    
+  .elem-3
+    h1 
+      font-size: 2.8rem
+    p 
+      line-height: 3.5rem
+      font-size: 2rem
+      margin-bottom: 10%
+  
+  .header 
+    font-size: 3.5rem
+  
+  .paragraph 
+    font-size: 1.6rem
+    line-height: 3rem
+    text-align: $t-align
+  
+    /*        picture         */
+  .gallery-row
+    >div
+      >.fa 
+        display: $inline
+        background: none
+  
+    /*            chess            */
+  .bg-chess 
+    margin-top: 10%
+    position: static
+    color: $text-color
+    >h1
+      font-size: 3rem
+      opacity: 1
+      background-color: rgba($color-default,0.4)
+      position: static
+    
+  .people 
+    margin-top: 0%
+  
+  .people-name 
+    text-align: $t-align
+    margin-top: 10%
+    font-weight: bold
+    font-size: 3rem
+  
+    /*          promo          */
+  .promo-img
+    img 
+      margin-top: 3%
+      margin-left: 0
+      @include square-size(100%,auto)
+  
+  .promo 
+    margin: $margin
+  
+  .promo-text-header
+    >div 
+      margin-top: 1%
+      font-size: 3rem
+      font-weight: bold
+      text-align: $t-align
+  
+  .promo-text-description
+    >div 
+      @include padding-font-size(0.8rem, 2.4rem)
+      text-align: $t-align
+      line-height: 3rem
+  
+  .numbers 
+    margin-top: 2%
+  
+  .numbers-text 
+    font-size: 2rem
+    letter-spacing: 1.2rem
+    margin-bottom: 5%
+  
+  .icon-6 
+    margin-left: 10%
+    >i 
+      float: none
+  
+  hr 
+    display: $none
+  
+  h2 
+    text-align: $t-align
+    font-size: 2rem
+    letter-spacing: 0.4rem
+    text-decoration: underline
+    
+  h4 
+    font-size: 1.6rem
+  
+
+  
