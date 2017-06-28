@@ -32,14 +32,20 @@ module.exports = function(grunt) {
     } 
   },
     browserSync: {
+  default_options: {
     bsFiles: {
-        src :  '/*.css'
+      src: [
+        "*.css",
+        "*.html"
+      ]
     },
     options: {
-        server: {
-            baseDir: "./"
-        }
+      watchTask: true,
+      server: {
+        baseDir: "./"
+      }
     }
+  }
 }
   });
   // Load the plugins tasks 
