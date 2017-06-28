@@ -24,7 +24,7 @@ module.exports = function(grunt) {
     },
     watch: {
     scripts: {
-        files: ['sass/*.sass'],
+        files: ['*.sass'],
         tasks: ['sass'],
         options: {
             spawn: false,
@@ -32,19 +32,15 @@ module.exports = function(grunt) {
     } 
   },
     browserSync: {
-            dev: {
-                bsFiles: {
-                    src : [
-                        'app/css/*.css',
-                        'app/*.html'
-                    ]
-                },
-                options: {
-                    watchTask: true,
-                    server: './app'
-                }
-            }
+    dev: {
+        bsFiles: {
+            src : 'styles.css'
+        },
+        options: {
+            proxy: "local.dev"
         }
+    }
+}
   });
   // Load the plugins tasks 
   grunt.loadNpmTasks('grunt-sass');
