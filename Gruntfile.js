@@ -32,12 +32,12 @@ module.exports = function(grunt) {
     } 
   },
     browserSync: {
-    dev: {
-        bsFiles: {
-            src : 'styles.css'
-        },
-        options: {
-            proxy: "local.dev"
+    bsFiles: {
+        src :  '/*.css'
+    },
+    options: {
+        server: {
+            baseDir: "./"
         }
     }
 }
